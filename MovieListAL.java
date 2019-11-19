@@ -52,7 +52,7 @@ public MovieListAL(Movie[] movies)
         double maxRating = m.getRating();
         for(int i=0;i<movies.size();i++){
             if(movies.get(i).getRating()>maxRating)
-                m=movies.get(i);
+                m=movies.get(i);                
                 maxRating=m.getRating();
         }
            
@@ -65,12 +65,14 @@ public MovieListAL(Movie[] movies)
     public ArrayList<Movie> findHighestRatedByStudio()
     {
         ArrayList<Movie> highestRated = new ArrayList<Movie>();
-        
+        Movie mDisney= getHighestrating(getByStudio("Disney"));
+        Movie mGhibli= getHighestrating(getByStudio("Ghibli"));
+        Movie mIndy = getHighestrating(getByStudio("Indy"));
+        highestRated.add(mDisney);
+        highestRated.add(mGhibli);
+        highestRated.add(mIndy);
+        return highestRated;
         // Your code goes here
-         for(int i=0;i<movies.size();i++){
-             if(movies.get(i).
-        // return highestRated;
-        
-    }
+}
 
 }
