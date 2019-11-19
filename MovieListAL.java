@@ -15,19 +15,20 @@ public class MovieListAL
     /**
      * Constructor for objects of class MovieListsAL
      */
-    public MovieListAL(Movie[] movies)
-    {
+public MovieListAL(Movie[] movies)
+{
+    pool= new ArrayList<Movie>();
         for(int i=0;i<movies.length;i++){
             pool.add(movies[i]);
         }
-    }
+}
 
     public ArrayList<Movie> getPool()
     {
         return pool;
     }
     
-    /**
+        /**
      * Given an arraylist of Movies and a studio name, create a new ArrayList of movies
      * by that studio
      */
@@ -42,21 +43,23 @@ public class MovieListAL
 }
     
     
-    /** 
+/** 
      * get the movie with the highest rating within an ArrayList
      */
     public Movie getHighestrating(ArrayList<Movie> movies)
     {
-
-        
-        return null;
-        
+        Movie m= movies.get(0);
+        double maxRating = m.getRating();
+        for(int i=0;i<movies.size();i++){
+            if(movies.get(i).getRating()>maxRating)
+                m=movies.get(i);
+                maxRating=m.getRating();
+        }
+           
+        return m;
     }
     
-    
-
-    
-    /**
+     /**
      * Find the highest movies by studio
      */
     public ArrayList<Movie> findHighestRatedByStudio()
@@ -64,7 +67,8 @@ public class MovieListAL
         ArrayList<Movie> highestRated = new ArrayList<Movie>();
         
         // Your code goes here
-         return null;
+         for(int i=0;i<movies.size();i++){
+             if(movies.get(i).
         // return highestRated;
         
     }
